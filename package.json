@@ -24,10 +24,14 @@
     "workbox-streams": "^6.5.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject",
+    "lint": "eslint \"**/*.tsx\" \"**/*.ts\" && npx stylelint \"**/*.css\" \"**/*.scss\" && prettier --check .",
+    "lint-fix": "eslint --fix \"**/*.tsx\" \"**/*.ts\" && npx stylelint --fix \"**/*.css\" \"**/*.scss\" && prettier --write .",
+    "pre-commit": "yarn lint-fix || true",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -46,5 +50,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8",
+    "react-app-rewired": "^2.2.1",
+    "stylelint": "^15.6.1",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recommended": "^12.0.0",
+    "stylelint-config-sass-guidelines": "^10.0.0",
+    "typescript": "^5.0.4"
   }
 }
