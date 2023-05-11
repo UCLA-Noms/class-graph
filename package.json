@@ -9,7 +9,8 @@
     "lint": "eslint \"**/*.tsx\" \"**/*.ts\" && npx stylelint \"**/*.css\" \"**/*.scss\" && prettier --check .",
     "lint-fix": "eslint --fix \"**/*.tsx\" \"**/*.ts\" && npx stylelint --fix \"**/*.css\" \"**/*.scss\" && prettier --write .",
     "pre-commit": "yarn lint-fix || true",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "ci": "yarn lint && yarn build"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

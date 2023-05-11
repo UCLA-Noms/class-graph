@@ -10,4 +10,5 @@ export default defineConfig({
     open: true,
     port: 8000,
   },
+  base: '/class-graph/',
 });
