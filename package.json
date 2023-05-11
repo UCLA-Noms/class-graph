@@ -23,6 +23,10 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@types/babel__core": "^7.20.0",
+    "@types/babel__template": "^7.4.1",
+    "@types/prettier": "^2.7.2",
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.40.0",
     "eslint-plugin-import": "^2.27.5",
@@ -35,6 +39,7 @@
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-recommended": "^12.0.0",
     "stylelint-config-sass-guidelines": "^10.0.0",
+    "svgo": "^3.0.2",
     "typescript": "^5.0.4",
     "vite": "^4.3.5",
     "vite-plugin-svgr": "^3.2.0",
