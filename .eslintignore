@@ -1,14 +1,6 @@
-webpack.*
-yarn.lock
-*.json
-*.md
-*.toml
-
-*.css
-*.scss
-*.js
-*.jsx
-
 node_modules/
 dist/
+.prettierrc.js
+.eslintrc.js
+env.d.ts
 public/
