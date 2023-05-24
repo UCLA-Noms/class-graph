@@ -10,14 +10,14 @@ function App(): JSX.Element {
   const draggable = <Draggable id="draggable">Go ahead, drag me.</Draggable>;
   const [isMoveable, setIsMoveable] = useState<boolean>(false);
 
-  const onDrag = () => {
-    setIsMoveable(true);
-    //etc
-  };
-  const onStop = () => {
-    setIsMoveable(false);
-    //etc
-  };
+  // const onDrag = () => {
+  //   setIsMoveable(true);
+  //   //etc
+  // };
+  // const onStop = () => {
+  //   setIsMoveable(false);
+  //   //etc
+  // };
 
   return (
     <div className="app">
