@@ -123,6 +123,8 @@ module.exports = {
     // Are you sure | is not a typo for || ?
     'no-bitwise': ['error'],
 
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+
     // Member ordering
     '@typescript-eslint/member-ordering': [
       'error',
