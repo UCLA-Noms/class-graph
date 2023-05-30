@@ -45,5 +45,10 @@ export default function ClassGraph() {
 
   const { graph, options, events } = state;
 
-  return <Graph graph={graph} options={options} events={events} />;
+  return (
+    <>
+      Here is our graph!
+      <Graph graph={graph} options={options} events={events} />
+    </>
+  );
 }
