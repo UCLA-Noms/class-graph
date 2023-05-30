@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import './App.css';
 import './Init';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+import ClassGraph from './components/ClassGraph';
 import Draggable from './Draggable';
 import Droppable from './Droppable';
-import ClassGraph from './components/ClassGraph';
 
 function App(): JSX.Element {
   const [parent, setParent] = useState(null);

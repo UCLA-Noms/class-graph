@@ -1,4 +1,4 @@
-@import 'normalize.css/normalize.css';
+@import url('normalize.css/normalize.css');
 
 .app {
   border: 1px solid black;
