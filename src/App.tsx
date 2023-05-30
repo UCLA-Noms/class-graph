@@ -1,9 +1,11 @@
 import { DndContext } from '@dnd-kit/core';
 import React, { useState } from 'react';
 import './App.css';
+import './Init';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import Draggable from './Draggable';
 import Droppable from './Droppable';
+import ClassGraph from './components/ClassGraph';
 
 function App(): JSX.Element {
   const [parent, setParent] = useState(null);
@@ -24,32 +26,7 @@ function App(): JSX.Element {
       <DndContext onDragEnd={handleDragEnd}>
         <div id="classes">Classes</div>
         <div id="main">
-          <TransformWrapper
-            initialScale={1}
-            disabled={isMoveable}
-            minScale={0.5}
-            maxScale={1}
-            limitToBounds={true}
-            pinch={{ step: 5 }}
-            wheel={{ step: 5 }}
-            doubleClick={{ step: 5 }}
-            // onPanningStop={() => setIsMoveable(false)}
-            // onPanningStart={() => setIsMoveable(true)}
-            // onPinchingStop={() => setIsMoveable(false)}
-            // onPinchingStart={() => setIsMoveable(true)}
-            // onZoomStart={() => setIsMoveable(true)}
-            // onZoomStop={() => setIsMoveable(false)}
-            // onPanning={() => setIsMoveable(true)}
-            // onPinching={() => setIsMoveable(true)}
-            // onZoom={() => setIsMoveable(true)}
-          >
-            <TransformComponent
-              contentClass="main"
-              wrapperStyle={{ height: '100vh', width: '50vw', margin: '0 auto' }}
-            >
-              <Droppable id="droppable">{!parent ? draggable : null}</Droppable>
-            </TransformComponent>
-          </TransformWrapper>
+          <ClassGraph></ClassGraph>
         </div>
         <div id="dars">
           DARS
