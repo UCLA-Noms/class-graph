@@ -50,7 +50,8 @@ module.exports = {
 
     '@typescript-eslint/no-non-null-assertion': 'off',
 
-    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    // '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'no-unused-vars': 'off',
 
     // Style
     quotes: ['error', 'single', { avoidEscape: true }],
@@ -122,6 +123,10 @@ module.exports = {
 
     // Are you sure | is not a typo for || ?
     'no-bitwise': ['error'],
+
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+
+    'react/prop-types': 'off',
 
     // Member ordering
     '@typescript-eslint/member-ordering': [
