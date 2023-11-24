@@ -6,3 +6,4 @@
 
 echo "Fixing any lint errors before commit!"
 npm run pre-commit
+
