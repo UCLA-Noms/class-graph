@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Graph from 'react-graph-vis';
 
-export default function ClassGraph() {
+export default function ClassGraph({ courses, onCourseClick }) {
   const [state, setState] = useState({
     graph: {
       nodes: [
@@ -34,7 +34,7 @@ export default function ClassGraph() {
     events: {
       select: ({ nodes, edges }) => {
         if (nodes.length > 0) {
-          alert('Selected node: ' + nodes);
+          onCourseClick(nodes);
         }
       },
       doubleClick: ({ pointer: { canvas } }) => {
