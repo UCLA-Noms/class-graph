@@ -36,6 +36,8 @@
     "@types/babel__core": "^7.20.0",
     "@types/babel__template": "^7.4.1",
     "@types/prettier": "^2.7.2",
+    "@types/react": "^18.2.38",
+    "@types/vis": "^4.21.27",
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.40.0",
     "eslint-plugin-import": "^2.27.5",
