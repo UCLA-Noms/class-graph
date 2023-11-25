@@ -4,9 +4,9 @@ import './App.css';
 import './Init';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import ClassGraph from './components/ClassGraph';
+import CourseDetails from './CourseDetails';
 import Draggable from './Draggable';
 import Droppable from './Droppable';
-import CourseDetails from './CourseDetails';
 
 export interface Course {
   id: number;
