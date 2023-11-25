@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Course } from './App';
 
 interface CourseDetailsProps {
-  course: Course;
+  course: Course | null;
 }
-const CourseDetails: React.FC<CourseDetailsProps> | null = ({ course }) => {
+const CourseDetails = ({ course }: CourseDetailsProps) => {
   return (
     <div>
       {course ? (

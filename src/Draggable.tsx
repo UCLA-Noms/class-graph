@@ -2,10 +2,10 @@ import { useDraggable } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
 import React from 'react';
 
-export default function Draggable(props) {
+export default function Draggable(props: React.PropsWithChildren<{ id: string }>) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: props.id,
-    threshold: 5,
+    // threshold: 5,
   });
   const style = {
     // Outputs `translate3d(x, y, 0)`
