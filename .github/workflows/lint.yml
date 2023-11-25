@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -29,6 +29,6 @@ jobs:
         run: |
           npm cache clean --force
           rm -rf node_modules
-      - run: npm ci
+      - run: npm i
       - name: Running CI
         run: npm run ci

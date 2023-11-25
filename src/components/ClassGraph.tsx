@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import Graph from 'react-graph-vis';
+import { Course } from '../App';
 
-export default function ClassGraph() {
+interface ClassGraphProps {
+  courses: Course[];
+  onCourseClick: (courseIds: number) => void;
+}
+
+export default function ClassGraph({ courses, onCourseClick }: ClassGraphProps) {
   const [state, setState] = useState({
     graph: {
       nodes: [
@@ -32,12 +38,12 @@ export default function ClassGraph() {
       width: '100%',
     },
     events: {
-      select: ({ nodes, edges }) => {
+      select: ({ nodes, edges }: { nodes: any; edges: any }) => {
         if (nodes.length > 0) {
-          alert('Selected node: ' + nodes);
+          onCourseClick(nodes);
         }
       },
-      doubleClick: ({ pointer: { canvas } }) => {
+      doubleClick: ({ pointer: { canvas } }: { pointer: { canvas: any } }) => {
         alert('double click! at ' + canvas.x + ', ' + canvas.y);
       },
     },
