@@ -29,6 +29,6 @@ jobs:
         run: |
           npm cache clean --force
           rm -rf node_modules
-      - run: npm ci
+      - run: npm i
       - name: Running CI
         run: npm run ci
