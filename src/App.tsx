@@ -80,7 +80,7 @@ function App(): JSX.Element {
         <ClassGraph
           courses={courses}
           onCourseClick={handleCourseClick}
-          selected={selectedCourse}
+          selected={selectedCourse ? selectedCourse.id : -1}
         ></ClassGraph>
       </div>
       {selectedCourse ? (
