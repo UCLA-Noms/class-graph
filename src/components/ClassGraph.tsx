@@ -36,7 +36,7 @@ export default function ClassGraph({ courses, onCourseClick, selected }: ClassGr
         color: '#000000',
       },
       height: '100%',
-      width: innerWidth * 0.8,
+      width: `${innerWidth * 0.8}px`,
     },
     events: {
       select: ({ nodes, edges }: { nodes: any; edges: any }) => {
