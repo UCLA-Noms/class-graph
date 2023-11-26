@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Course } from './App';
+import { Course } from '../App';
 
 interface CourseDetailsProps {
   course: Course | null;

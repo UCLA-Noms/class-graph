@@ -1,0 +1,38 @@
+@import url('normalize.css/normalize.css');
+
+$class-panel-background-color: red;
+$main-panel-background-color: green;
+$dars-panel-background-color: rgb(0 183 255);
+
+.app {
+  border: 1px solid black;
+  width: 100vw;
+  height: 100vh;
+  max-height: -webkit-fill-available;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#classes,
+#dars,
+#main {
+  height: 100%;
+}
+
+#classes {
+  background-color: $class-panel-background-color;
+  width: 20%;
+}
+
+#dars {
+  background-color: $dars-panel-background-color;
+  width: 30%;
+}
+
+#main {
+  background-color: $main-panel-background-color;
+  min-width: 50%;
+  max-width: 80%;
+}
