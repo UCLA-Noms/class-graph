@@ -1,12 +1,8 @@
-import { DndContext } from '@dnd-kit/core';
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import './Init';
-import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import ClassGraph from './components/ClassGraph';
-import CourseDetails from './CourseDetails';
-import Draggable from './Draggable';
-import Droppable from './Droppable';
+import CourseDetails from './components/CourseDetails';
 
 export interface Course {
   id: number;
@@ -18,12 +14,7 @@ export interface Course {
 }
 
 function App(): JSX.Element {
-  const [parent, setParent] = useState(null);
-  const draggable = <Draggable id="draggable">Go ahead, drag me.</Draggable>;
-  const [isMoveable, setIsMoveable] = useState<boolean>(false);
-
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-
   const courses: Course[] = [
     {
       id: 1,
@@ -71,16 +62,13 @@ function App(): JSX.Element {
       instructor: 'Brent Corbin',
     },
   ];
-  // const onDrag = () => {
-  //   setIsMoveable(true);
-  //   //etc
-  // };
-  // const onStop = () => {
-  //   setIsMoveable(false);
-  //   //etc
-  // };
 
   const handleCourseClick = (courseId: number) => {
+    console.log('courseId: ', courseId);
+    if (courseId < 0) {
+      setSelectedCourse(null);
+      return;
+    }
     const selected: Course = courses.find((c) => c.id == courseId)!;
     setSelectedCourse(selected);
   };
@@ -89,11 +77,17 @@ function App(): JSX.Element {
     <div className="app">
       <div id="classes">Classes</div>
       <div id="main">
-        <ClassGraph courses={courses} onCourseClick={handleCourseClick}></ClassGraph>
+        <ClassGraph
+          courses={courses}
+          onCourseClick={handleCourseClick}
+          selected={selectedCourse ? selectedCourse.id : -1}
+        ></ClassGraph>
       </div>
-      <div id="dars">
-        <CourseDetails course={selectedCourse}></CourseDetails>
-      </div>
+      {selectedCourse ? (
+        <div id="dars">
+          <CourseDetails course={selectedCourse}></CourseDetails>
+        </div>
+      ) : null}
     </div>
   );
 }

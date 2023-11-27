@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Graph from 'react-graph-vis';
 import { Course } from '../App';
 
 interface ClassGraphProps {
   courses: Course[];
   onCourseClick: (courseIds: number) => void;
+  selected: number;
 }
 
-export default function ClassGraph({ courses, onCourseClick }: ClassGraphProps) {
+export default function ClassGraph({ courses, onCourseClick, selected }: ClassGraphProps) {
   const [state, setState] = useState({
     graph: {
       nodes: [
@@ -35,12 +36,14 @@ export default function ClassGraph({ courses, onCourseClick }: ClassGraphProps) 
         color: '#000000',
       },
       height: '100%',
-      width: '100%',
+      width: `${innerWidth * 0.8}px`,
     },
     events: {
       select: ({ nodes, edges }: { nodes: any; edges: any }) => {
         if (nodes.length > 0) {
           onCourseClick(nodes);
+        } else {
+          onCourseClick(-1);
         }
       },
       doubleClick: ({ pointer: { canvas } }: { pointer: { canvas: any } }) => {
@@ -51,10 +54,5 @@ export default function ClassGraph({ courses, onCourseClick }: ClassGraphProps) 
 
   const { graph, options, events } = state;
 
-  return (
-    <>
-      Here is our graph!
-      <Graph graph={graph} options={options} events={events} />
-    </>
-  );
+  return <Graph graph={graph} options={options} events={events} />;
 }
