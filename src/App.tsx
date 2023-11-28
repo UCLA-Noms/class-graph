@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.scss';
 import './Init';
+import { push as Menu } from 'react-burger-menu';
 import ClassGraph from './components/ClassGraph';
 import CourseDetails from './components/CourseDetails';
 
@@ -64,7 +65,6 @@ function App(): JSX.Element {
   ];
 
   const handleCourseClick = (courseId: number) => {
-    console.log('courseId: ', courseId);
     if (courseId < 0) {
       setSelectedCourse(null);
       return;
@@ -74,21 +74,34 @@ function App(): JSX.Element {
   };
 
   return (
-    <div className="app">
-      <div id="classes">Classes</div>
-      <div id="main">
-        <ClassGraph
-          courses={courses}
-          onCourseClick={handleCourseClick}
-          selected={selectedCourse ? selectedCourse.id : -1}
-        ></ClassGraph>
-      </div>
-      {selectedCourse ? (
-        <div id="dars">
-          <CourseDetails course={selectedCourse}></CourseDetails>
+    <>
+      <div id="app">
+        <div id="main-content">
+          <div id="classes">Classes</div>
+          <div id="main">
+            <ClassGraph
+              courses={courses}
+              onCourseClick={handleCourseClick}
+              selected={selectedCourse ? selectedCourse.id : -1}
+            ></ClassGraph>
+          </div>
         </div>
-      ) : null}
-    </div>
+        <Menu
+          width={'20%'}
+          pageWrapId={'main-content'}
+          outerContainerId={'app'}
+          right
+          noOverlay
+          isOpen={selectedCourse != null}
+          customBurgerIcon={false}
+          customCrossIcon={false}
+        >
+          <div id="dars">
+            <CourseDetails course={selectedCourse}></CourseDetails>
+          </div>
+        </Menu>
+      </div>
+    </>
   );
 }
 
