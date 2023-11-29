@@ -64,7 +64,6 @@ function App(): JSX.Element {
   ];
 
   const handleCourseClick = (courseId: number) => {
-    console.log('courseId: ', courseId);
     if (courseId < 0) {
       setSelectedCourse(null);
       return;
@@ -83,11 +82,9 @@ function App(): JSX.Element {
           selected={selectedCourse ? selectedCourse.id : -1}
         ></ClassGraph>
       </div>
-      {selectedCourse ? (
-        <div id="dars">
-          <CourseDetails course={selectedCourse}></CourseDetails>
-        </div>
-      ) : null}
+      <div id="dars" className={selectedCourse ? 'visible' : 'hide'}>
+        <CourseDetails course={selectedCourse}></CourseDetails>
+      </div>
     </div>
   );
 }

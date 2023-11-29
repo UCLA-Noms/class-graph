@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Course } from '../App';
 
 interface CourseDetailsProps {
-  course: Course;
+  course: Course | null;
 }
 const CourseDetails = ({ course }: CourseDetailsProps) => {
+  if (!course) {
+    return <div></div>;
+  }
   return (
     <div>
       <div>
