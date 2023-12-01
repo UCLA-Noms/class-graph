@@ -7,6 +7,7 @@ import ClassGraph from './components/ClassGraph';
 import CourseDetails from './CourseDetails';
 import Draggable from './Draggable';
 import Droppable from './Droppable';
+import FourYearPlan from './components/FourYearPlan';
 
 export interface Course {
   id: number;
@@ -89,7 +90,8 @@ function App(): JSX.Element {
     <div className="app">
       <div id="classes">Classes</div>
       <div id="main">
-        <ClassGraph courses={courses} onCourseClick={handleCourseClick}></ClassGraph>
+        {/* <ClassGraph courses={courses} onCourseClick={handleCourseClick}></ClassGraph> */}
+        <FourYearPlan></FourYearPlan>
       </div>
       <div id="dars">
         <CourseDetails course={selectedCourse}></CourseDetails>
