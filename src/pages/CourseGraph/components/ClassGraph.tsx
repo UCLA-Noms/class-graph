@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Graph from 'react-graph-vis';
-import { Course } from '../App';
+import { Course } from 'types/Course';
 
 interface ClassGraphProps {
   courses: Course[];
