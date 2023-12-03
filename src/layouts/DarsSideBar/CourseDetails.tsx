@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Course } from '../App';
+import { Course } from 'types/Course';
 
 interface CourseDetailsProps {
   course: Course;
