@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import CourseGraph from './components/CourseGraph';
-import CourseDetails from 'layouts/DarsSideBar/CourseDetails';
-import LeftPanel from 'layouts/LeftPanel';
+import CourseDetails from 'layouts/CourseListSideBar/CourseDetails';
+import LeftPanel from 'layouts/DarsPanel';
 import { Course } from 'types/Course';
 import './style.scss';
 
