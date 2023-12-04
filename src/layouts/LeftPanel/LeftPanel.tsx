@@ -1,4 +1,4 @@
-const LeftPanel = () => {
+export const LeftPanel: React.FC = () => {
   return <div>Left Panel</div>;
 };
 

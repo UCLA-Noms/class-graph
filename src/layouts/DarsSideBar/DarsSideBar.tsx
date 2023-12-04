@@ -1,4 +1,4 @@
-const DarsSideBar = () => {
+export const DarsSideBar: React.FC = () => {
   return <div>Course Details</div>;
 };
 
