@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-import ClassGraph from './components/ClassGraph';
+import CourseGraph from './components/CourseGraph';
 import CourseDetails from 'layouts/DarsSideBar/CourseDetails';
 import LeftPanel from 'layouts/LeftPanel';
 import { Course } from 'types/Course';
 import './style.scss';
 
-const CourseGraph = () => {
+export const CourseMap: React.FC = () => {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const courses: Course[] = [
     {
@@ -67,16 +67,16 @@ const CourseGraph = () => {
   };
 
   return (
-    <div className="CourseGraph" id="app">
+    <div className="CourseMap" id="coursemap">
       <div id="classes">
         <LeftPanel />
       </div>
       <div id="main">
-        <ClassGraph
+        <CourseGraph
           courses={courses}
           onCourseClick={handleCourseClick}
           selected={selectedCourse ? selectedCourse.id : -1}
-        ></ClassGraph>
+        ></CourseGraph>
       </div>
       {selectedCourse ? (
         <div id="dars">
@@ -87,4 +87,4 @@ const CourseGraph = () => {
   );
 };
 
-export default CourseGraph;
+export default CourseMap;

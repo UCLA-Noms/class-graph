@@ -2,13 +2,13 @@ import { useState } from 'react';
 import Graph from 'react-graph-vis';
 import { Course } from 'types/Course';
 
-interface ClassGraphProps {
+interface CourseGraphProps {
   courses: Course[];
   onCourseClick: (courseIds: number) => void;
   selected: number;
 }
 
-export default function ClassGraph({ courses, onCourseClick, selected }: ClassGraphProps) {
+export default function CourseGraph({ courses, onCourseClick, selected }: CourseGraphProps) {
   const [state, setState] = useState({
     graph: {
       nodes: [
