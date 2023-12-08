@@ -1,6 +1,6 @@
 import './App.scss';
 import './Init';
-import CourseMap from './pages/CourseMap';
+import CourseMap from './views/CourseMap';
 
 function App(): JSX.Element {
   return (
