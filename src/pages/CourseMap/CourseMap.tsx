@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import CourseGraph from './components/CourseGraph';
-import CourseDetails from 'layouts/CourseListSideBar/CourseDetails';
+import CourseDetails from 'layouts/Inspector/CourseDetails';
 import LeftPanel from 'layouts/DarsPanel';
 import { Course } from 'types/Course';
 import './style.scss';
