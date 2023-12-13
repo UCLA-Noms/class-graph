@@ -1,10 +1,15 @@
 import { useState } from 'react';
 
 import CourseGraph from './components/CourseGraph';
-import LeftPanel from 'panels/DarsPanel';
+import DarsPanel from 'panels/DarsPanel';
 import CourseDetails from 'panels/Inspector/CourseDetails';
 import { Course } from 'types/Course';
-import './style.scss';
+import {
+  CourseMapClassName,
+  DarsPanelClassName,
+  InspectorPanelClassName,
+  MainPanelClassName,
+} from './style';
 
 export const CourseMap: React.FC = () => {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
@@ -67,11 +72,11 @@ export const CourseMap: React.FC = () => {
   };
 
   return (
-    <div className="CourseMap" id="coursemap">
-      <div id="classes">
-        <LeftPanel />
+    <div className={CourseMapClassName}>
+      <div className={DarsPanelClassName}>
+        <DarsPanel />
       </div>
-      <div id="main">
+      <div className={MainPanelClassName}>
         <CourseGraph
           courses={courses}
           onCourseClick={handleCourseClick}
@@ -79,7 +84,7 @@ export const CourseMap: React.FC = () => {
         ></CourseGraph>
       </div>
       {selectedCourse ? (
-        <div id="dars">
+        <div className={InspectorPanelClassName}>
           <CourseDetails course={selectedCourse}></CourseDetails>
         </div>
       ) : null}
