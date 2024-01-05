@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import { css } from '@emotion/react';
+import { useState } from 'react';
 
 import CourseGraph from './components/CourseGraph';
-import CourseDetails from 'panels/Inspector/CourseDetails';
 import DarsPanel from 'panels/DarsPanel';
+import CourseDetails from 'panels/Inspector/CourseDetails';
 import { Course } from 'types/Course';
 
 export const CourseMap: React.FC = () => {
