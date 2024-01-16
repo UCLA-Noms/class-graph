@@ -16,7 +16,7 @@ export default function CourseGraph({ courses, onCourseClick, selected }: Course
         { id: 2, label: 'CS32' },
         { id: 3, label: 'CS33' },
         { id: 4, label: 'CS35L' },
-        { id: 5, label: 'PHYS1A' },
+        { id: 5, label: 'PHYS1longtexttesttest' },
       ],
       edges: [
         { from: 1, to: 2 },
@@ -29,10 +29,20 @@ export default function CourseGraph({ courses, onCourseClick, selected }: Course
         navigationButtons: true,
       },
       nodes: {
-        shape: 'dot',
-        size: 32,
+        shape: 'circle',
+        widthConstraint: 100,
+        borderWidth: 1.5,
+        color: {
+          border: '#000000',
+          background: 'white',
+        },
+        font: {
+          size: 14,
+          align: 'center',
+        },
       },
       edges: {
+        width: 1.5,
         color: '#000000',
       },
       height: '100%',
