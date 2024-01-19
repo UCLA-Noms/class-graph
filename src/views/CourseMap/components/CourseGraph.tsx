@@ -11,17 +11,18 @@ interface CourseGraphProps {
 export default function CourseGraph({ courses, onCourseClick, selected }: CourseGraphProps) {
   const [state, setState] = useState({
     graph: {
-      nodes: [
-        { id: 1, label: 'CS31' },
-        { id: 2, label: 'CS32' },
-        { id: 3, label: 'CS33' },
-        { id: 4, label: 'CS35L' },
-        { id: 5, label: 'PHYS1A' },
-      ],
+      nodes: courses.map((item) => ({ id: item.id, label: item.code })),
+      // nodes: [
+      //   { id: 1, label: 'CS31' },
+      //   { id: 2, label: 'CS32' },
+      //   { id: 3, label: 'CS33' },
+      //   { id: 4, label: 'CS35L' },
+      //   { id: 5, label: 'PHYS1A' },
+      // ],
       edges: [
         { from: 1, to: 2 },
-        { from: 2, to: 3 },
-        { from: 2, to: 4 },
+        { from: 3, to: 2 },
+        //{ from: 2, to: 4 },
       ],
     },
     options: {
