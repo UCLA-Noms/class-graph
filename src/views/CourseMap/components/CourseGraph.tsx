@@ -4,26 +4,21 @@ import { Course } from 'types/Course';
 
 interface CourseGraphProps {
   courses: Course[];
+  edges: { prereq: number; postreq: number }[];
   onCourseClick: (courseIds: number) => void;
   selected: number;
 }
 
-export default function CourseGraph({ courses, onCourseClick, selected }: CourseGraphProps) {
+export default function CourseGraph({ courses, edges, onCourseClick, selected }: CourseGraphProps) {
   const [state, setState] = useState({
     graph: {
       nodes: courses.map((item) => ({ id: item.id, label: item.code })),
-      // nodes: [
-      //   { id: 1, label: 'CS31' },
-      //   { id: 2, label: 'CS32' },
-      //   { id: 3, label: 'CS33' },
-      //   { id: 4, label: 'CS35L' },
-      //   { id: 5, label: 'PHYS1A' },
+      edges: edges.map((item) => ({ from: item.prereq, to: item.postreq })),
+      // edges: [
+      //   { from: 1, to: 2 },
+      //   { from: 3, to: 2 },
+      //   //{ from: 2, to: 4 },
       // ],
-      edges: [
-        { from: 1, to: 2 },
-        { from: 3, to: 2 },
-        //{ from: 2, to: 4 },
-      ],
     },
     options: {
       interaction: {

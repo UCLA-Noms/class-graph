@@ -15,21 +15,22 @@ export const CourseMap: React.FC = () => {
     ],
     subcat_nodes: [],
     prereq_edges: [
-      { prereq: 1, postreq: 2 },
+      { prereq: 1, postreq: 3 },
       { prereq: 3, postreq: 2 },
     ],
   };
 
-  let class_list = res['course_nodes'];
+  const class_list = res.course_nodes;
+  const edge_list = res.prereq_edges;
 
   // let course = [];
   const courses: Course[] = [];
 
-  for (let x of class_list) {
+  for (const x of class_list) {
     const curClass: Course = {
-      id: x['id'],
-      code: x['class_code'],
-      name: x['class_name'],
+      id: x.id,
+      code: x.class_code,
+      name: x.class_name,
       description: 'DUMMY DISC',
       units: 5,
       instructor: 'DUMMY INSTRUCTOR',
@@ -113,6 +114,7 @@ export const CourseMap: React.FC = () => {
       <div id="main">
         <CourseGraph
           courses={courses}
+          edges={edge_list}
           onCourseClick={handleCourseClick}
           selected={selectedCourse ? selectedCourse.id : -1}
         ></CourseGraph>
