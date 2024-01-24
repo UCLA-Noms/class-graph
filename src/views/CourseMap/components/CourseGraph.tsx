@@ -6,9 +6,21 @@ interface CourseGraphProps {
   courses: Course[];
   onCourseClick: (courseIds: number) => void;
   selected: number;
+  borderColor?: string;
+  size?: number;
+  arrow?: boolean;
+  arrowType?: string;
 }
 
-export default function CourseGraph({ courses, onCourseClick, selected }: CourseGraphProps) {
+export default function CourseGraph({
+  courses,
+  onCourseClick,
+  selected,
+  borderColor = '#000000',
+  size = 100,
+  arrow = true,
+  arrowType = 'arrow',
+}: CourseGraphProps) {
   const [state, setState] = useState({
     graph: {
       nodes: [
@@ -30,11 +42,11 @@ export default function CourseGraph({ courses, onCourseClick, selected }: Course
       },
       nodes: {
         shape: 'circle',
-        widthConstraint: 100,
+        widthConstraint: size,
         borderWidth: 1.5,
         color: {
-          border: '#000000',
-          background: 'white',
+          border: borderColor,
+          background: '#FFFFFF',
         },
         font: {
           size: 14,
@@ -42,8 +54,15 @@ export default function CourseGraph({ courses, onCourseClick, selected }: Course
         },
       },
       edges: {
+        arrows: {
+          to: {
+            enabled: arrow,
+            type: arrowType,
+          },
+        },
         width: 1.5,
         color: '#000000',
+        chosen: false,
       },
       height: '100%',
       width: `${innerWidth * 0.8}px`,

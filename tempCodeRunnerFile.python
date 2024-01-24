@@ -1,0 +1,18 @@
+#!/usr/bin/python
+import random
+import argparse
+
+def main():
+    parser = argparse.ArgumentParser(prog='SHUF')
+    parser.add_argument('int', metavar='COUNT', type=int, )
+    parser.add_argument('-e', '--echo', nargs='*', \
+                        help='treat each arg as an input line')
+    parser.add_argument('-i', '--input-range', dest='input_range', \
+                        help='treat each number LO through HI as an input line')
+    parser.add_argument('-n', '--head-count', dest='head_count', action='store_count'\
+                        help='output at most COUNT lines')
+    parser.add_argument('-r', '--repeat', action='store_true', \
+                        help='each output line is randomly chosen from all the inputs')
+
+    args = parser.parse_args()
+    print(args.head_count(args.int))
