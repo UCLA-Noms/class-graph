@@ -32,7 +32,7 @@ const CourseGraph = ({
   arrow = true,
   arrowType = 'arrow',
 }: CourseGraphProps) => {
-  const { selectedCourse, setSelectedCourse } = useContext(SelectedCourse);
+  const { setSelectedCourse } = useContext(SelectedCourse);
   const [data, setData] = useState(_data);
 
   const options = {
@@ -42,10 +42,7 @@ const CourseGraph = ({
     nodes: {
       id: 1,
       shape: 'circle',
-      widthConstraint: {
-        minimum: 100,
-        maximum: 150,
-      },
+      widthConstraint: size,
       borderWidth: 1.5,
       color: {
         border: borderColor,

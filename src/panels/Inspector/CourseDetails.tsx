@@ -1,5 +1,5 @@
-import { SelectedCourse } from 'providers/SelectedCourse';
 import { useContext } from 'react';
+import { SelectedCourse } from 'providers/SelectedCourse';
 import { Course } from 'types/Course';
 
 const courses: Course[] = [

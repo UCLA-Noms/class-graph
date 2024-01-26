@@ -38,6 +38,7 @@ module.exports = {
     },
   },
   rules: {
+    'no-empty-function': 'off',
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
     // A few more opinions in addition to extensions
 
