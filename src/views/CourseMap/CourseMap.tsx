@@ -1,10 +1,10 @@
+import { css } from '@emotion/react';
 import { useState } from 'react';
 
 import CourseGraph from './components/CourseGraph';
-import LeftPanel from 'panels/DarsPanel';
+import DarsPanel from 'panels/DarsPanel';
 import CourseDetails from 'panels/Inspector/CourseDetails';
 import { Course } from 'types/Course';
-import './style.scss';
 
 export const CourseMap: React.FC = () => {
   const res = {
@@ -107,11 +107,11 @@ export const CourseMap: React.FC = () => {
   };
 
   return (
-    <div className="CourseMap" id="coursemap">
-      <div id="classes">
-        <LeftPanel />
+    <div css={style.courseMap}>
+      <div css={style.darsPanel}>
+        <DarsPanel />
       </div>
-      <div id="main">
+      <div css={style.mainPanel}>
         <CourseGraph
           courses={courses}
           edges={edge_list}
@@ -120,7 +120,7 @@ export const CourseMap: React.FC = () => {
         ></CourseGraph>
       </div>
       {selectedCourse ? (
-        <div id="dars">
+        <div css={style.inspectorPanel}>
           <CourseDetails course={selectedCourse}></CourseDetails>
         </div>
       ) : null}
@@ -129,3 +129,22 @@ export const CourseMap: React.FC = () => {
 };
 
 export default CourseMap;
+
+const style = {
+  courseMap: css({
+    width: '100vw',
+    height: '100vh',
+    maxHeight: 'fill-available',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'stretch',
+  }),
+  mainPanel: css({
+    minWidth: '50%',
+    minHeight: '80%',
+    backgroundColor: 'green',
+  }),
+  darsPanel: css({ width: '20%', backgroundColor: 'red' }),
+  inspectorPanel: css({ width: '30%', backgroundColor: 'rgb(0 183 255)' }),
+};
