@@ -1,5 +1,5 @@
-import { SelectedCourse } from 'providers/SelectedCourse';
-import { useContext } from 'react';
+import { useState } from 'react';
+
 import { Course } from 'types/Course';
 
 const courses: Course[] = [
@@ -50,30 +50,16 @@ const courses: Course[] = [
   },
 ];
 
-const CourseDetails = () => {
-  const { selectedCourse } = useContext(SelectedCourse);
+const useSelectedCourse = () => {
+  // const [selectedCourse, setSelectedCourse] = useState(courses.find((c) => c.id == courseId)!);
+  const [selected, setSelected] = useState({ id: -1 });
 
-  if (!selectedCourse || !courses[selectedCourse]) return null;
+  const setSelectedCourse = (courseId: number) => {
+    setSelected(courses.find((c) => c.id == courseId)!);
+    console.log(selected);
+  };
 
-  return (
-    <div>
-      <div>
-        <h4>{courses[selectedCourse].code}</h4>
-        <h2>{courses[selectedCourse].name}</h2>
-      </div>
-
-      <p>
-        <strong>Description:</strong> {courses[selectedCourse].description}
-      </p>
-      <p>
-        <strong>Units:</strong> {courses[selectedCourse].units}
-      </p>
-      <p>
-        <strong>Instructor:</strong> {courses[selectedCourse].instructor}
-      </p>
-      <p>insert more details about courses[selectedCourse]</p>
-    </div>
-  );
+  return { selectedCourse: selected, setSelectedCourse };
 };
 
-export default CourseDetails;
+export default useSelectedCourse;
