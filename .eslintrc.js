@@ -39,6 +39,7 @@ module.exports = {
   },
   rules: {
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
+    '@typescript-eslint/no-empty-function': 'off',
     // A few more opinions in addition to extensions
 
     // As per React 17 changes! https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html
