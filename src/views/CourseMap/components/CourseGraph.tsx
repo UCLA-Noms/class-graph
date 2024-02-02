@@ -8,6 +8,7 @@ type CourseGraphProps = {
   size?: number;
   arrow?: boolean;
   arrowType?: string;
+  dashes?: boolean | number[];
 };
 
 const _data = {
@@ -31,6 +32,7 @@ const CourseGraph: React.FC<CourseGraphProps> = ({
   size = 100,
   arrow = true,
   arrowType = 'arrow',
+  dashes = false,
 }) => {
   const { setSelectedCourse } = useContext(SelectedCourse);
   const [data, setData] = useState(_data);
@@ -40,7 +42,6 @@ const CourseGraph: React.FC<CourseGraphProps> = ({
       navigationButtons: true,
     },
     nodes: {
-      id: 1,
       shape: 'circle',
       widthConstraint: size,
       borderWidth: 1.5,
@@ -48,7 +49,7 @@ const CourseGraph: React.FC<CourseGraphProps> = ({
         border: borderColor,
         background: '#FFFFFF',
         highlight: {
-          border: borderColor,
+          border: 'borderColor',
           background: '#FFFFFF',
         },
       },
@@ -64,6 +65,7 @@ const CourseGraph: React.FC<CourseGraphProps> = ({
           type: arrowType,
         },
       },
+      dashes,
       width: 1.5,
       color: '#000000',
       chosen: false,
@@ -77,7 +79,6 @@ const CourseGraph: React.FC<CourseGraphProps> = ({
       setSelectedCourse(nodes?.[0]);
     },
     doubleClick: ({ pointer: { canvas } }: { pointer: { canvas: any } }) => {
-      // FIXME: are we gonna use double click?
       alert('double click! at ' + canvas.x + ', ' + canvas.y);
     },
   };
