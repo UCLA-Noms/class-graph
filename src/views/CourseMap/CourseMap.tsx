@@ -37,6 +37,11 @@ const style = {
     minHeight: '80%',
     backgroundColor: 'green',
   }),
-  darsPanel: css({ width: '20%', backgroundColor: 'red' }),
+  darsPanel: css({
+    width: '20%',
+    backgroundColor: 'rgb(233, 233,233)',
+    borderWidth: '1px', // Example border width of 1 pixel
+    borderStyle: 'solid', // Example bord
+  }),
   inspectorPanel: css({ width: '30%', backgroundColor: 'rgb(0 183 255)' }),
 };
