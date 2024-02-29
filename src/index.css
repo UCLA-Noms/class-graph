@@ -9,8 +9,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scrollbar-width: thin;
+
   color-scheme: light dark;
+  scrollbar-width: thin;
   height: 100vh;
   overflow: hidden;
   height: 100%;
