@@ -56,7 +56,7 @@ const CourseDetails: React.FC = () => {
   if (!selectedCourse || !courses[selectedCourse]) return null;
 
   return (
-    <div>
+    <div className="w-[20rem]">
       <div>
         <h4>{courses[selectedCourse].code}</h4>
         <h2>{courses[selectedCourse].name}</h2>

@@ -83,7 +83,11 @@ const CourseGraph: React.FC<CourseGraphProps> = ({
     },
   };
 
-  return <Graph graph={data} options={options} events={events} />;
+  return (
+    <div className="bg-blue-600 relative h-full flex-1 overflow-hidden">
+      <Graph graph={data} options={options} events={events} />
+    </div>
+  );
 };
 
 export default CourseGraph;
