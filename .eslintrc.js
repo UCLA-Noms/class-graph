@@ -38,6 +38,12 @@ module.exports = {
     },
   },
   rules: {
+    'scss/at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['tailwind'],
+      },
+    ],
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
     '@typescript-eslint/no-empty-function': 'off',
     // A few more opinions in addition to extensions
