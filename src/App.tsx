@@ -1,4 +1,3 @@
-import './App.scss';
 import './Init';
 import { NextUIProvider } from '@nextui-org/react';
 import CourseMap from './views/CourseMap';
